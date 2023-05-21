@@ -7,6 +7,7 @@ var s = function(p) {
     p.createCanvas(600, 400);
     p.background(200);
     p.fill(150);
+    //hello
   };
 
   p.draw = function() {
