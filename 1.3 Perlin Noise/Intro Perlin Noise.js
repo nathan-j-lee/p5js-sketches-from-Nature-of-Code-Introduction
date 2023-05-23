@@ -52,3 +52,26 @@ var t = function(q) {
 };
 
 var testSketch2 = new p5(t, 'c2');
+
+
+var a = function(r) {
+
+  r.setup = function() {
+    r.createCanvas(800, 300);
+    r.background(200);
+    loadPixels() //load pixel data from display and put into array called pixels[] (must be called before reading or writing from pixels)
+    for (int x = 0; x < r.width; x++) {
+      for (int y = 0; y < r.height; y++) {
+        let brightness = r.random(255); //choose a random color from black to white
+        pixels[x+y*width] = r.color(brightness);
+      }
+    }
+    r.updatePixels();
+  };
+  r.draw = function() {
+
+  };
+
+};
+
+var testSketch3 = new p5(t, 'c3');
