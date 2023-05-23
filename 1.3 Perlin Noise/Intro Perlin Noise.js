@@ -7,7 +7,6 @@ var s = function(p) {
     p.createCanvas(600, 400);
     p.background(200);
     p.fill(150);
-    //hello
   };
 
   p.draw = function() {
@@ -74,4 +73,4 @@ var a = function(r) {
 
 };
 
-var testSketch3 = new p5(t, 'c3');
+var testSketch3 = new p5(a, 'c3');
