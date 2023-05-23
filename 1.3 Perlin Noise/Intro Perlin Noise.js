@@ -57,18 +57,18 @@ var a = function(r) {
 
   r.setup = function() {
     r.createCanvas(800, 300);
-    r.background(200);
-    loadPixels() //load pixel data from display and put into array called pixels[] (must be called before reading or writing from pixels)
-    for (int x = 0; x < r.width; x++) {
-      for (int y = 0; y < r.height; y++) {
+    r.background(0);
+
+  };
+  r.draw = function() {
+    r.loadPixels() //load pixel data from display and put into array called pixels[] (must be called before reading or writing from pixels)
+    for (let x = 0; x < r.width; x++) {
+      for (let y = 0; y < r.height; y++) {
         let brightness = r.random(255); //choose a random color from black to white
-        pixels[x+y*width] = r.color(brightness);
+        r.pixels[x+y*width] = r.color(brightness);
       }
     }
     r.updatePixels();
-  };
-  r.draw = function() {
-
   };
 
 };
