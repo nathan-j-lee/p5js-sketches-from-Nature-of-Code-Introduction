@@ -56,19 +56,24 @@ var testSketch2 = new p5(t, 'c2');
 var a = function(r) {
 
   r.setup = function() {
-    r.createCanvas(800, 300);
+    r.createCanvas(600, 400);
     r.background(0);
 
-  };
-  r.draw = function() {
     r.loadPixels() //load pixel data from display and put into array called pixels[] (must be called before reading or writing from pixels)
+    let xoff = 100;
     for (let x = 0; x < r.width; x++) {
+      let yoff = 100;
       for (let y = 0; y < r.height; y++) {
-        let brightness = r.random(255); //choose a random color from black to white
-        r.pixels[x+y*width] = r.color(brightness);
+        let brightness = r.map(r.noise(xoff, yoff), 0, 1, 0, 255);
+        r.set(x, y, brightness);
+        yoff += 0.01;
       }
+      xoff += 0.01;
     }
     r.updatePixels();
+  };
+  r.draw = function() {
+
   };
 
 };
