@@ -54,26 +54,32 @@ var testSketch2 = new p5(t, 'c2');
 
 
 var a = function(r) {
-
+let zoff = 1;
+let xoff = 100;
+let yoff = 100;
   r.setup = function() {
     r.createCanvas(600, 400);
     r.background(0);
-
-    r.loadPixels() //load pixel data from display and put into array called pixels[] (must be called before reading or writing from pixels)
-    let xoff = 100;
-    for (let x = 0; x < r.width; x++) {
-      let yoff = 100;
-      for (let y = 0; y < r.height; y++) {
-        let brightness = r.map(r.noise(xoff, yoff), 0, 1, 0, 255);
-        r.set(x, y, brightness);
-        yoff += 0.01;
-      }
-      xoff += 0.01;
-    }
-    r.updatePixels();
   };
-  r.draw = function() {
 
+  r.draw = function() {
+    r.loadPixels(); //load pixel data from display and put into array called pixels[] (must be called before reading or writing from pixels)
+    for (let x = 0; x < r.width; x++) {
+      yoff = 0;
+      for (let y = 0; y < r.height; y++) {
+        r.noiseDetail(2, 0.2);
+        let c1 = r.map(r.noise(xoff, yoff, zoff), 0, 1, 0, 255);
+        let index = (x + y * r.width) * 4;
+        r.pixels[index] = c1;
+        r.pixels[index+1] = c1;
+        r.pixels[index+2] = c1;
+        yoff += 0.001;
+        
+      }
+      xoff += 0.001;
+    }
+    zoff += 0.001;
+    r.updatePixels();
   };
 
 };
