@@ -7,4 +7,4 @@ Displaying sketches from Nature of Code: Introduction chapter  <br />
 
 [Introduction to Perlin Noise](https://nathan-j-lee.github.io/p5js-sketches-from-Nature-of-Code-Introduction/1.3%20Perlin%20Noise/) <br />
 
-[Introduction to Vectors](https://nathan-j-lee.github.io/p5js-sketches-from-Nature-of-Code-Introduction/2.2%20Vectors/) <br />
+[Introduction to Vectors](https://nathan-j-lee.github.io/p5js-sketches-from-Nature-of-Code-Introduction/2.2%20Random%20Vectors/) <br />
